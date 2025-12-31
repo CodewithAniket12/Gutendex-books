@@ -1,7 +1,10 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function Books() {
-  return (
-    <div>Books</div>
+      const { genre } = useParams()
+   return (
+    <div>
+      <h1>{genre}</h1>
+    </div>
   )
 }
