@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchBooksByGenre } from '../services/api'
+import BookCard from '../components/BookCard.jsx'
 
 function Books() {
   const { genre } = useParams()
@@ -28,32 +29,25 @@ function Books() {
   if (error) return <div>{error}</div>
 
   return (
-  <div>
-    <h1>{genre}</h1>
+    <div>
+  <h1>{genre}</h1>
 
+  <div className="books-grid">
     {books.map((book) => {
-      const cover =
-        book.formats['image/jpeg'] ||
-        book.formats['image/png']
-
-      const author = book.authors?.[0]?.name || 'Unknown Author'
+    const cover = book.formats?.['image/jpeg']
+    const author = book.authors?.[0]?.name || 'Unknown Author'
 
       return (
-        <div key={book.id}>
-          {cover && (
-            <img
-              src={cover}
-              alt={book.title}
-              width="100"
-            />
-          )}
-          <p>{book.title}</p>
-          <p>{author}</p>
-        </div>
+        <BookCard
+          key={book.id}
+          title={book.title}
+          author={author}
+          cover={cover}
+        />
       )
     })}
   </div>
-)
-}
+</div>
+    ) }
 
 export default Books
