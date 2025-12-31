@@ -28,16 +28,32 @@ function Books() {
   if (error) return <div>{error}</div>
 
   return (
-    <div>
-      <h1>{genre}</h1>
+  <div>
+    <h1>{genre}</h1>
 
-      {books.map((book) => (
+    {books.map((book) => {
+      const cover =
+        book.formats['image/jpeg'] ||
+        book.formats['image/png']
+
+      const author = book.authors?.[0]?.name || 'Unknown Author'
+
+      return (
         <div key={book.id}>
+          {cover && (
+            <img
+              src={cover}
+              alt={book.title}
+              width="100"
+            />
+          )}
           <p>{book.title}</p>
+          <p>{author}</p>
         </div>
-      ))}
-    </div>
-  )
+      )
+    })}
+  </div>
+)
 }
 
 export default Books
