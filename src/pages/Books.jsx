@@ -29,8 +29,8 @@ function Books() {
   if (error) return <div>{error}</div>
 
   return (
-    <div>
-  <h1>{genre}</h1>
+    <div className='page'>
+  <h1 className='page-title'>{genre}</h1>
 
   <div className="books-grid">
     {books.map((book) => {
