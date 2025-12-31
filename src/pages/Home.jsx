@@ -1,7 +1,32 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function Home() {
+const genres = [
+  'Fiction',
+  'Drama',
+  'Humour',
+  'Politics',
+  'Philosophy',
+  'History',
+  'Adventure',
+]
+
+function Home() {
+  const navigate = useNavigate()
+
   return (
-    <div>Home</div>
+    <div>
+      <h1>Gutenberg Project</h1>
+
+      {genres.map((genre) => (
+        <button
+          key={genre}
+          onClick={() => navigate(`/books/${genre.toLowerCase()}`)}
+        >
+          {genre}
+        </button>
+      ))}
+    </div>
   )
 }
+
+export default Home
