@@ -14,17 +14,20 @@ function Home() {
   const navigate = useNavigate()
 
   return (
-    <div>
-      <h1>Gutenberg Project</h1>
+    <div className="page">
+      <h1 className="page-title">Gutenberg Project</h1>
 
-      {genres.map((genre) => (
-        <button
-          key={genre}
-          onClick={() => navigate(`/books/${genre.toLowerCase()}`)}
-        >
-          {genre}
-        </button>
-      ))}
+      <div className="genre-grid">
+        {genres.map((genre) => (
+          <div
+            key={genre}
+            className="genre-card"
+            onClick={() => navigate(`/books/${genre.toLowerCase()}`)}
+          >
+            <p className="genre-name">{genre}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
