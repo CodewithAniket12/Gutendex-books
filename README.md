@@ -109,6 +109,7 @@ This project was developed with professional guidance from AI (GitHub Copilot, G
 - **Project Boilerplate & Structure**: Initial setup and component architecture
 - **Styling & CSS**: Design implementation and responsive layout refinement
 - **Git Workflow Support**: Assistance with version control issues and repository management
+- **Documentation & README**: Content structure and documentation creation
 
 **Core Implementation**: The most complex feature—**Infinite Scroll with Debounced Search**—combines Intersection Observer API, pagination logic, and state management. This was implemented with hints and guidance, showcasing advanced React patterns including useCallback, useRef, and proper cleanup handlers to prevent memory leaks.
 
