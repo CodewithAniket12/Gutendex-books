@@ -1,16 +1,21 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import backIcon from '../assets/icons/Back.svg';
 
 function Header({ title }) {
-  const navigate = useNavigate()
+  var navigate = useNavigate();
 
   return (
-    <div className="header">
-      <button className="back-button" onClick={() => navigate(-1)}>
-        ←
+    <div className="books-header">
+      <button
+        type="button"
+        className="back-button"
+        onClick={function() { navigate('/'); }}
+      >
+        <img src={backIcon} alt="Back" />
       </button>
-      <h2 className="header-title">{title}</h2>
+      <span className="books-title">{title}</span>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
