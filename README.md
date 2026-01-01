@@ -1,16 +1,100 @@
-# React + Vite
+# Gutendex Books
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for browsing and discovering books from the Gutendex API. Built with clean UI/UX principles and responsive design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Browse by Genre**: Explore books organized by different literary genres
+- **Search Functionality**: Search for specific books within each genre
+- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
+- **Infinite Scroll**: Load more books as you scroll through the catalog
+- **Book Details**: View book covers, titles, and author information
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+Gutendex-books/
+├── src/
+│   ├── styles/
+│   │   └── main.css          # Global styles and responsive design
+│   ├── pages/
+│   │   ├── home.html         # Home/landing page with genre selection
+│   │   └── books.html        # Books listing page
+│   ├── scripts/
+│   │   └── main.js           # Core application logic
+│   └── assets/               # Images and icons
+├── index.html                # Entry point
+└── README.md                 # This file
+```
 
-## Expanding the ESLint configuration
+## Design System
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Color Palette
+- **Primary Purple**: `#5E56E7` - Main accent color
+- **Background Light**: `#F8F7FF` - Primary background
+- **Background Gray**: `#F0F0F6` - Secondary background
+- **Text Dark**: `#333333` - Primary text color
+- **Text Gray**: `#A0A0A0` - Secondary text color
+- **White**: `#FFFFFF` - Card backgrounds
+
+### Typography
+- **Font Family**: Montserrat
+- **Headings**: 600 font-weight
+- **Body**: 400 font-weight
+
+## Setup Instructions
+
+1. Clone the repository or download the project files
+2. Open `index.html` in your web browser
+
+## Usage
+
+### Home Page
+- Select a genre from the available options
+- Each genre card displays an icon and name
+- Click any genre to view books in that category
+
+### Books Page
+- View a grid of books with cover images, titles, and authors
+- Use the search bar to filter books within the genre
+- Scroll down to load more books
+- Click the back button to return to the home page
+
+## API Integration
+
+This application uses the [Gutendex API](https://gutendex.com/books) to fetch book data:
+- Base URL: `https://gutendex.com/books`
+- Supports filtering by topic/genre
+- Supports search queries
+
+## Responsive Breakpoints
+
+- **Desktop**: 1025px and above
+- **Tablet**: 769px - 1024px (4 columns)
+- **Mobile**: 421px - 768px (3 columns)
+- **Small Mobile**: 420px and below (2 columns)
+
+## Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers
+
+## Future Enhancements
+
+- Book detail modal with full information
+- Favorites/bookmarks feature
+- User ratings and reviews
+- Dark mode
+- Advanced filtering options
+- Reading list management
+
+## License
+
+This project is open source and available for educational purposes.
+
+## Resources
+
+- [Gutendex API Documentation](https://gutendex.com/)
+- [Montserrat Font](https://fonts.google.com/specimen/Montserrat)
