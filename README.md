@@ -15,15 +15,28 @@ A modern web application for browsing and discovering books from the Gutendex AP
 ```
 Gutendex-books/
 ├── src/
+│   ├── components/
+│   │   ├── BookCard.jsx      # Book display component
+│   │   ├── GenreCard.jsx     # Genre selection component
+│   │   ├── Header.jsx        # Navigation header
+│   │   └── SearchBar.jsx     # Search functionality
+│   ├── pages/
+│   │   ├── Home.jsx          # Home/landing page with genre selection
+│   │   └── Books.jsx         # Books listing page with infinite scroll
+│   ├── services/
+│   │   └── api.js            # Gutendex API integration
+│   ├── data/
+│   │   └── genres.js         # Genre data
 │   ├── styles/
 │   │   └── main.css          # Global styles and responsive design
-│   ├── pages/
-│   │   ├── home.html         # Home/landing page with genre selection
-│   │   └── books.html        # Books listing page
-│   ├── scripts/
-│   │   └── main.js           # Core application logic
-│   └── assets/               # Images and icons
-├── index.html                # Entry point
+│   ├── assets/               # Images and icons
+│   ├── App.jsx               # Main app component
+│   └── main.jsx              # Entry point
+├── public/                   # Static assets
+├── index.html                # HTML template
+├── package.json              # Dependencies and scripts
+├── vite.config.js            # Vite configuration
+├── eslint.config.js          # ESLint configuration
 └── README.md                 # This file
 ```
 
@@ -89,6 +102,15 @@ This application uses the [Gutendex API](https://gutendex.com/books) to fetch bo
 - Dark mode
 - Advanced filtering options
 - Reading list management
+
+## Acknowledgments
+
+This project was developed with professional guidance from AI (GitHub Copilot, Gemini) for:
+- **Project Boilerplate & Structure**: Initial setup and component architecture
+- **Styling & CSS**: Design implementation and responsive layout refinement
+- **Git Workflow Support**: Assistance with version control issues and repository management
+
+**Core Implementation**: The most complex feature—**Infinite Scroll with Debounced Search**—combines Intersection Observer API, pagination logic, and state management. This was implemented with hints and guidance, showcasing advanced React patterns including useCallback, useRef, and proper cleanup handlers to prevent memory leaks.
 
 ## License
 
