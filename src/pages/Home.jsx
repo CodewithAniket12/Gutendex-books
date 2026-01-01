@@ -1,35 +1,31 @@
-import { useNavigate } from 'react-router-dom'
+import GenreCard from '../components/GenreCard';
+import { genres } from '../data/genres';
+import PatternSvg from '../assets/icons/Pattern.svg';
 
-const genres = [
-  'Fiction',
-  'Drama',
-  'Humour',
-  'Politics',
-  'Philosophy',
-  'History',
-  'Adventure',
-]
-
-function Home() {
-  const navigate = useNavigate()
-
+var Home = function() {
   return (
-    <div className="page">
-      <h1 className="page-title">Gutenberg Project</h1>
-
-      <div className="genre-grid">
-        {genres.map((genre) => (
-          <div
-            key={genre}
-            className="genre-card"
-            onClick={() => navigate(`/books/${genre.toLowerCase()}`)}
-          >
-            <p className="genre-name">{genre}</p>
-          </div>
-        ))}
+    <div className="home-container">
+      <img src={PatternSvg} alt="" className="home-pattern" />
+      <div className="home-content">
+        <h1 className="home-title">Gutenberg Project</h1>
+        <p className="home-description">
+          A social cataloging website that allows you to freely search its database of books, annotations, and reviews.
+        </p>
+        <div className="genres-grid">
+          {genres.map(function(genre) {
+            return (
+              <GenreCard
+                key={genre.id}
+                name={genre.name}
+                icon={genre.icon}
+                path={genre.path}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
